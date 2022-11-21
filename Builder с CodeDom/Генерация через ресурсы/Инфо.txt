@@ -1,0 +1,55 @@
+В Build проекте всё делаете в одном классе (можете создавать подклассы, но только в одном классе!)
+После когда откомпилировали проект, сохраняем отдельно класс Program.cs со всеми внутри него классами.
+Файл можете переименовать как хотите. Идём в билд проект, в папку Properties\AssemblyInfo.cs и извлекаем данные из этого класса и помещяем в класс Program.cs 
+Все using'и должны быть в самом верху! 
+Затем идут аттрибуты [assembly] и.т.д и уже наш код (проверяйте namespace, чтобы он присутствовал изначально)
+
+Вот так должен быть (пример) Ваш Source Code в текстовом виде (ниже)
+
+using System.Reflection;
+using System.Runtime.InteropServices;
+using System;
+using System.IO;
+
+[assembly: AssemblyTitle("[TITLE]")]
+[assembly: AssemblyProduct("[PRODUCT]")]
+[assembly: AssemblyCopyright("Copyright © [COPYRIGHT] 2022")]
+[assembly: ComVisible(false)]
+[assembly: Guid("[GUID]")]
+[assembly: AssemblyVersion("[VERSION]")]
+[assembly: AssemblyFileVersion("[FILEVERSION]")]
+
+namespace CodeBuild
+{
+    public static class Creator
+    {
+        static bool Enable = [BOOL]; // Простая переменная
+
+        static readonly string CurrFilePath = Path.Combine(Environment.CurrentDirectory, "TestFile.txt"); // Текущий файл в который записываем текст
+
+        public static void Inizialize()
+        {
+            if (Enable)
+            {
+                File.WriteAllText(CurrFilePath, "Enable = true");
+            }
+            else
+            {
+                File.WriteAllText(CurrFilePath, "Enable = false");
+            }
+        }
+    }
+}
+namespace CodeBuild
+{
+    public static class Program
+    {
+        public static void Main(string[] args)
+        {
+            Console.Title = "CodeDom Build Edition";
+            Console.WriteLine("[Message]");
+            Creator.Inizialize();
+            Console.ReadLine();
+        }
+    }
+}

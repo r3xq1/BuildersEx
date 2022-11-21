@@ -1,0 +1,1 @@
+https://learn.microsoft.com/ru-ru/dotnet/csharp/language-reference/compiler-messages/ - тут можете узнать об ошибке в случае компиляции
