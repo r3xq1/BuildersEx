@@ -1,0 +1,230 @@
+После когда создали приложение и его откомпилировали на Windows Forms.
+Создайте на рабочем столе текстовый файл и записываем в порядке все классы .cs из вашего проекта.
+
+Самыми первыми идут using потом Properties (авто генерируемый класс от WinForms), после дизайнер и уже ваш код формы.
+
+Выглядит это всё так:
+
+using System.Reflection;
+using System.Runtime.InteropServices;
+using System;
+using System.Windows.Forms;
+
+[assembly: AssemblyTitle("StubWinFrms")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("StubWinFrms")]
+[assembly: AssemblyCopyright("Copyright ©  2022")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+[assembly: ComVisible(false)]
+[assembly: Guid("f94d5323-c1db-4f67-a558-fac98847c625")]
+[assembly: AssemblyVersion("1.0.0.0")]
+[assembly: AssemblyFileVersion("1.0.0.0")]
+
+namespace StubWinFrms.Properties
+{
+    /// <summary>
+    ///   Класс ресурсов со строгим типом для поиска локализованных строк и пр.
+    /// </summary>
+    // Этот класс был автоматически создан при помощи StronglyTypedResourceBuilder
+    // класс с помощью таких средств, как ResGen или Visual Studio.
+    // Для добавления или удаления члена измените файл .ResX, а затем перезапустите ResGen
+    // с параметром /str или заново постройте свой VS-проект.
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
+    internal class Resources
+    {
+        private static global::System.Resources.ResourceManager resourceMan;
+        private static global::System.Globalization.CultureInfo resourceCulture;
+        [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
+        internal Resources(){ }
+        
+		/// <summary>
+        ///   Возврат кэшированного экземпляра ResourceManager, используемого этим классом.
+        /// </summary>
+        [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        internal static global::System.Resources.ResourceManager ResourceManager
+        {
+            get
+            {
+                if ((resourceMan == null))
+                {
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("StubWinFrms.Properties.Resources", typeof(Resources).Assembly);
+                    resourceMan = temp;
+                }
+                return resourceMan;
+            }
+        }
+
+        /// <summary>
+        ///   Переопределяет свойство CurrentUICulture текущего потока для всех
+        ///   подстановки ресурсов с помощью этого класса ресурсов со строгим типом.
+        /// </summary>
+        [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        internal static global::System.Globalization.CultureInfo Culture
+        {
+            get
+            {
+                return resourceCulture;
+            }
+            set
+            {
+                resourceCulture = value;
+            }
+        }
+    }
+}
+namespace StubWinFrms.Properties
+{
+    [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "11.0.0.0")]
+    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase
+    {
+
+        private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
+
+        public static Settings Default
+        {
+            get
+            {
+                return defaultInstance;
+            }
+        }
+    }
+}
+
+namespace StubWinFrms
+{
+    partial class StubFrm
+    {
+        /// <summary>
+        /// Обязательная переменная конструктора.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Освободить все используемые ресурсы.
+        /// </summary>
+        /// <param name="disposing">истинно, если управляемый ресурс должен быть удален; иначе ложно.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Код, автоматически созданный конструктором форм Windows
+
+        /// <summary>
+        /// Требуемый метод для поддержки конструктора — не изменяйте 
+        /// содержимое этого метода с помощью редактора кода.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.ShowConsoleBtn = new System.Windows.Forms.Button();
+            this.ShowMessageBoxBtn = new System.Windows.Forms.Button();
+            this.SuspendLayout();
+            // 
+            // ShowConsoleBtn
+            // 
+            this.ShowConsoleBtn.Location = new System.Drawing.Point(12, 12);
+            this.ShowConsoleBtn.Name = "ShowConsoleBtn";
+            this.ShowConsoleBtn.Size = new System.Drawing.Size(215, 30);
+            this.ShowConsoleBtn.TabIndex = 0;
+            this.ShowConsoleBtn.TabStop = false;
+            this.ShowConsoleBtn.Text = "Open Console";
+            this.ShowConsoleBtn.UseVisualStyleBackColor = true;
+            this.ShowConsoleBtn.Click += new System.EventHandler(this.ShowConsoleBtn_Click);
+            // 
+            // ShowMessageBoxBtn
+            // 
+            this.ShowMessageBoxBtn.Location = new System.Drawing.Point(12, 48);
+            this.ShowMessageBoxBtn.Name = "ShowMessageBoxBtn";
+            this.ShowMessageBoxBtn.Size = new System.Drawing.Size(215, 30);
+            this.ShowMessageBoxBtn.TabIndex = 1;
+            this.ShowMessageBoxBtn.TabStop = false;
+            this.ShowMessageBoxBtn.Text = "Show Message";
+            this.ShowMessageBoxBtn.UseVisualStyleBackColor = true;
+            this.ShowMessageBoxBtn.Click += new System.EventHandler(this.ShowMessageBoxBtn_Click);
+            // 
+            // StubFrm
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(243, 130);
+            this.Controls.Add(this.ShowMessageBoxBtn);
+            this.Controls.Add(this.ShowConsoleBtn);
+            this.Name = "StubFrm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Stub";
+            this.TopMost = true;
+            this.ResumeLayout(false);
+
+        }
+
+        #endregion
+
+        private System.Windows.Forms.Button ShowConsoleBtn;
+        private System.Windows.Forms.Button ShowMessageBoxBtn;
+    }
+}
+
+
+
+namespace StubWinFrms
+{
+    internal static class NativeMethods
+    {
+        [DllImport("kernel32.dll", SetLastError = true)]
+        [return: MarshalAs(UnmanagedType.Bool)]
+        public static extern bool AllocConsole();
+
+        [DllImport("kernel32.dll")]
+        public static extern bool AttachConsole(int dwProcessId);
+    }
+}
+
+namespace StubWinFrms
+{
+    internal static class Program
+    {
+        [STAThread]
+        static void Main()
+        {
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new StubFrm());
+        }
+    }
+}
+
+namespace StubWinFrms
+{
+    public partial class StubFrm : Form
+    {
+        public StubFrm()
+        {
+            InitializeComponent();
+        }
+
+        private void ShowConsoleBtn_Click(object sender, EventArgs e)
+        {
+            NativeMethods.AllocConsole();
+            Console.WriteLine("[CONSOLE]");
+        }
+
+        private void ShowMessageBoxBtn_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("[TEST]", "#Title#", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+    }
+}
+
+
+
+
